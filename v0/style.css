@@ -1,0 +1,235 @@
+/* Google Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode (Default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --icon-color : #fff;
+    --nav-bg: #f4f4f4;
+    --nav-text: #222;
+    --nav-hover-bg: #e0e0e0;
+    --button-bg: #007BFF;
+    --button-text: #fff;
+
+    --window-bg: #f0f0f0;
+    --window-text: #333;
+    --window-border:#ccc;
+    --window-shadow: rgba(0,0,0,0.1);
+    --window-header: #ddd;
+
+
+    --blur-bg-1: rgba(0,0,0,0.1);
+    --blur-light: blur(10px);
+    --background-1: rgba(0, 0, 0, 0.25);
+
+}
+
+/* Dark Mode */
+.dark-mode {
+    --bg-color: #1e1e1e;
+    --text-color: #f5f5f5;
+    --icon-color: #000;
+    --nav-bg: #333;
+    --nav-text: #fff;
+    --nav-hover-bg: #444;
+    --button-bg: #0d6efd;
+    --button-text: #fff;
+
+    --window-bg: #2c2c2c;
+    --window-text: #f5f5f5;
+    --window-border: #444;
+    --window-shadow: rgba(0,0,0,0.3);
+    --window-header: #444;
+
+    --blur-bg-1: rgba(255,255,255,0.1);
+    --blur-light: blur(10px);
+    --background-1: rgba(255, 255, 255, 0.25);
+
+}
+
+/* Theme Toggle Button */
+#themeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--nav-text);
+    font-size: 24px;
+}
+
+/* Apply theme */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+  /*-----------------------------------------------------*/
+/* Main pages */
+.page {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 30px auto 0 auto;
+    display: none; /* Hidden by default */
+    position: relative;
+    top: 20px;
+    max-width: 96%;
+    max-height: 100vh;
+    overflow-y: auto; /* Added to handle overflow content */
+    box-shadow: 0 4px 6px var(--window-shadow); /* Added subtle shadow for better visibility */
+    border-radius: 8px; /* Added rounded corners for a modern look */
+    background: var(--window-bg); /* Ensure background matches theme */
+    transition: margin 0.3s ease, color 0.3s ease;
+}
+
+/* Style for active nav button */
+#nav button.active {
+    background-color: var(--nav-hover-bg); /* Use theme variable for consistency */
+    color: var(--button-text); /* Ensure text color matches theme */
+    border: none; /* Remove border for a cleaner look */
+    border-radius: 4px; /* Add slight rounding for consistency */
+    padding: 8px 12px; /* Adjust padding for better usability */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Filter button styles */
+.filter-btn {
+    margin: 4px;
+    padding: 6px 10px;
+    border: 1px solid var(--window-border); /* Use theme variable for border */
+    border-radius: 6px;
+    background: var(--window-bg); /* Match theme background */
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+}
+
+.filter-btn:hover {
+    background: var(--nav-hover-bg); /* Use theme variable for hover background */
+    border-color: var(--nav-text); /* Highlight border on hover */
+}
+
+/* Main navigation bar */
+.main-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--background-1); /* Use theme variable */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 4px var(--window-shadow); /* Add shadow for better separation */
+}
+
+/* Main navigation container */
+.main-nav-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure proper spacing between elements */
+    padding: 0px 20px; /* Add padding for better spacing */
+}
+
+/* Menu container */
+.menu-cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: var(--background-1); /* Match theme background */
+    width: 300px;
+    height: 100vh;
+    box-shadow: 2px 0 6px var(--window-shadow); /* Add shadow for better visibility */
+    overflow-y: auto; /* Handle overflow for long menus */
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+    transform: translateX(-100%); /* Initially hidden off-screen */
+}
+
+/* Optional: Add a class for showing the menu */
+.menu-cont.active {
+    transform: translateX(0); /* Slide in when active */
+}
+
+.nav-menu-btn, #backBtn {
+  border: none;
+  background: none;
+}
+
+/* Nav menu */
+
+/* Navigation Buttons Container */
+#nav.nav-buttons {
+  display: flex; /* Arrange buttons in a row */
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Add spacing between buttons */
+  padding: 20px; /* Add padding inside the container */
+  background: var(--window-bg); /* Match theme background */
+  border-right: 1px solid var(--window-border); /* Add a border for separation */
+  height: 100%; /* Full height of the menu container */
+  box-sizing: border-box; /* Include padding and border in dimensions */
+}
+
+/* Individual Navigation Buttons */
+#nav.nav-buttons button {
+  padding: 10px 15px; /* Add padding for better clickability */
+  border: none; /* Remove default border */
+  border-radius: 6px; /* Add rounded corners */
+  background: var(--nav-bg); /* Use theme variable for background */
+  color: var(--nav-text); /* Use theme variable for text color */
+  font-size: 16px; /* Set font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for Navigation Buttons */
+#nav.nav-buttons button:hover {
+  background: var(--nav-hover-bg); /* Change background on hover */
+  color: var(--button-text); /* Change text color on hover */
+}
+
+/* Active Navigation Button */
+#nav.nav-buttons button.active {
+  background: var(--button-bg); /* Highlight active button */
+  color: var(--button-text); /* Ensure text is readable */
+  font-weight: bold; /* Make active button text bold */
+}
+
+.main-body-container {
+  transition: transform 0.3s ease; /* Smooth transition for page movement */
+}
+
+/* Target the element with data-page-id="posts" */
+[data-page-id="posts"] {
+  display: none;
+}
+
+/* profile img */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--nav-text)
+}
+
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.profile-pic-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+.template-preview {
+  margin-top: 20px;
+  text-align: center;
+}

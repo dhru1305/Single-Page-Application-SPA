@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Page App</title>
+  <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    
+</head>
+<body>
+
+  <div class="main-body-container">
+
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+      <div class="main-nav-cont">
+        <div id="templatePreview" class="nav-profile-img"></div>
+       <button class="nav-menu-btn"><span class="material-symbols-outlined">menu</span></button>
+        <button id="backBtn" style="display: none;"><span class="material-symbols-outlined">arrow_back</span></button>
+        <button id="themeToggle">
+          <span class="material-icons" id="themeIcon">dark_mode</span>
+        </button>
+
+        <div class="menu-cont">
+          <div id="nav" class="nav-buttons"></div>
+        </div>
+      </div>
+  </nav>
+
+    <!-- Page Containers -->
+    <div>
+      <div id="home" class="page"></div>
+      <div id="allposts" class="page"></div>
+      <div id="posts" class="page"></div>
+      <div id="search" class="page"></div>
+      <div id="popularposts" class="page"></div>
+      <div id="about" class="page"></div>
+      <div id="contact" class="page"></div>
+      <div id="settings" class="page">
+        
+      </div>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
