@@ -1,0 +1,509 @@
+:root {
+    --bg: #ffffff;
+    --text: #111111;
+    --card: #f0f0f0;
+  }
+
+  .dark-mode {
+    --bg: #121212;
+    --text: #f0f0f0;
+    --card: #1e1e1e;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+  /* ============ Nav ============ */
+
+  #main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background: #222;
+  color: white;
+  border-bottom: 2px solid #444;
+}
+
+.nav-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #444;
+  color: white;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
+  background: #555;
+}
+
+.nav-button.active {
+  background: #555;
+}
+
+.theme-icon {
+  transition: color 0.3s, transform 0.2s;
+  font-size: 22px;
+}
+
+/* ========= Theme colors ========= */
+
+.sun-icon {
+  color: gold;
+}
+
+.moon-icon {
+  color: #4dabf7; /* soft blue */
+}
+
+/* Hover and click animations */
+#theme-toggle:hover .sun-icon {
+  transform: scale(1.05) rotate(120deg);
+}
+
+#theme-toggle:hover .moon-icon {
+  transform: scale(1.05) rotate(360deg);
+}
+
+#theme-toggle:active .theme-icon {
+  transform: scale(0.95);
+  opacity: 0.7;
+}
+
+/* Smooth transitions */
+.theme-icon,
+#theme-toggle {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* =============  Login page css =========== */
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px 25px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#loginForm input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  background: #2e2e2e;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+#loginForm input::placeholder {
+  color: #aaa;
+}
+
+#loginForm input:focus {
+  background: #3a3a3a;
+}
+
+#loginForm button {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #4dabf7;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#loginForm button:hover {
+  background: #339af0;
+}
+
+#loginForm button:active {
+  transform: scale(0.97);
+}
+
+/* ======= Post Page ========= */
+
+/* Posts Section Container */
+.posts-section {
+  padding: 2em;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Posts List Grid */
+.posts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+/* Individual Post Card */
+.post-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  max-width: 640px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Post Title */
+.post-card h3 {
+  margin-top: 0;
+  color: #1a1a1a;
+}
+
+/* Image Styling */
+.post-card img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+/* Metadata */
+.post-card small {
+  display: block;
+  color: #777;
+  margin-bottom: 0.2em;
+  font-size: 0.9em;
+}
+
+/* Coordinate Info */
+.post-card p:last-of-type {
+  margin-top: 0.8em;
+  font-size: 1em;
+  background-color: #eef2f6;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+/* ========= Admin panel ========= */
+
+/* Admin Panel Container */
+.admin-panel {
+  padding: 2em;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Top Button Row */
+.admin-panel > div:first-child {
+  margin-bottom: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+/* Buttons */
+.admin-panel button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-panel button:hover {
+  background-color: #0056b3;
+}
+
+/* Admin Blocks (Posts/Pages Section) */
+.admin-block {
+  margin-top: 2em;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Block Titles */
+.admin-block h2 {
+  margin-top: 0;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* Admin List */
+.admin-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-list-item {
+  padding: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-list-item:last-child {
+  border-bottom: none;
+}
+
+/* Edit Buttons */
+.edit-post, .edit-page {
+  background-color: #28a745;
+  margin-top: 0.5em;
+}
+
+.edit-post:hover, .edit-page:hover {
+  background-color: #218838;
+}
+
+/* Modal Styling */
+#admin-modal {
+  display: none; /* default, shown via JS */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#admin-modal > div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+}
+
+
+/* Form Container */
+#form-post {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Input, Textarea, and Select */
+#form-post input[type="text"],
+#form-post input[type="url"],
+#form-post input[type="datetime-local"],
+#form-post input[name="title"],
+#form-post input[name="description"],
+#form-post input[name="thumbnail"],
+#form-post input[name="tag"],
+#form-post textarea,
+#form-post select {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+#form-post input:focus,
+#form-post textarea:focus,
+#form-post select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea */
+#form-post textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+#form-post button {
+  padding: 0.8em 1.5em;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#form-post button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Page Form Container */
+#form-page {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Input and Textarea */
+#form-page input,
+#form-page textarea {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+/* Read-only field style */
+#form-page input[readonly] {
+  background-color: #f0f0f0;
+  color: #555;
+  cursor: not-allowed;
+}
+
+/* Focus State */
+#form-page input:focus,
+#form-page textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea */
+#form-page textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Button */
+#form-page button {
+  padding: 0.8em 1.5em;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#form-page button:hover {
+  background-color: #218838;
+}
+
+
+/* ========= json show ============= */
+
+/* JSON Popup Overlay */
+.json-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup Box */
+.popup-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+  position: relative;
+  width: 600px;
+}
+
+/* Close Button */
+.popup-box .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* JSON Preformatted Content */
+.popup-box pre {
+  max-height: 60vh;
+  overflow-y: auto;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: var(--text);
+  margin-top: 30px;
+}
+
+/* Copy Button */
+.popup-box .copy-btn {
+  padding: 6px 10px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
